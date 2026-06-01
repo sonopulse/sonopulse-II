@@ -46,6 +46,12 @@ margin: 0 auto;
         }
       </style>
 
+      <style id="css-smooth-scroll">
+        html {
+          scroll-behavior: smooth;
+        }
+      </style>
+
       <style id="css-reset">
         * {
           box-sizing: border-box;
@@ -1000,10 +1006,22 @@ margin: 0 auto;
           </div>
           <p>
             Projeto de Extensão "Sonopulse II" — Universidade Tiradentes. 
-Orientação: Prof. Dr. Thiago Abner | Equipe: Adriel Alves, Anny Beatriz, Beatriz de Andrade, Felipe Cavalcante, Jessica Mary, Laura Castro, Luan Dantas e Luan Jonatas — 2026.
+Orientação: Prof. Dr. Thiago Abner | Equipe: Adriel Alves, Anny Beatriz, Beatriz de Andrade, Felipe Cavalcante, Laura Castro, Luan Dantas e Luan Jonatas — 2026.
           </p>
         </div>
       </footer>
+      <script>
+        document.querySelectorAll('a[href^="#"]').forEach(function(anchor) {
+          anchor.addEventListener('click', function(e) {
+            var targetId = this.getAttribute('href').slice(1);
+            var target = document.getElementById(targetId);
+            if (target) {
+              e.preventDefault();
+              target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+          });
+        });
+      </script>
     </body>
   </html>
   <script src="https://code.iconify.design/iconify-icon/3.0.0/iconify-icon.min.js"></script>
@@ -1166,7 +1184,7 @@ Orientação: Prof. Dr. Thiago Abner | Equipe: Adriel Alves, Anny Beatriz, Beatr
   padding-left: 16px;
   padding-right: 16px;
 }
-.hero-content p,
+
 #sobre-equipamento p,
 #sobre-equipamento h2,
 #ultrassom-section p,
@@ -1174,7 +1192,6 @@ Orientação: Prof. Dr. Thiago Abner | Equipe: Adriel Alves, Anny Beatriz, Beatr
   text-align: center;
 }
 
-    
 #sobre-equipamento p,
 #ultrassom-section p,
 .accordion-body-inner p {
